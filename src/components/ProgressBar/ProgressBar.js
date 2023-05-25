@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   width: 370px;
   height: ${props => props.size};
   border-radius: 8px;
-  padding: ${props => props.size === 'large' ? '4px' : '0px'};
+  padding: ${props => props.size === '24px' ? '4px' : '0px'};
 `
 
 const Progress = styled.div`
@@ -25,7 +25,11 @@ const ProgressBar = ({ value, size }) => {
   const sizes = {small: '8px', medium: '12px', large: '24px'}
 
   return (
-      <Wrapper size={sizes[size] ?? 'medium'}>
+      <Wrapper size={sizes[size] ?? 'medium'}
+           role="progressbar"
+           aria-valuenow={value}
+           aria-valuemin={0}
+           aria-valuemax={100}>
         <Progress value={value}/>
       </Wrapper>);
 };
