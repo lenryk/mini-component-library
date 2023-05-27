@@ -5,6 +5,7 @@ import { COLORS } from '../../constants';
 import Icon from '../Icon';
 import { getDisplayedValue } from './Select.helpers';
 
+// Hide the native select
 const NativeSelect = styled.select`
   position: absolute;
   top: 0;
@@ -14,6 +15,7 @@ const NativeSelect = styled.select`
   opacity: 0;
 `
 
+// Our new select that is styled and sits on top
 const CustomSelect = styled.div`
   background-color: ${COLORS.transparentGray15};
   color: ${COLORS.gray700};
@@ -32,13 +34,13 @@ const CustomSelect = styled.div`
   }
 `
 
+// Main wrapper to constrain the width
 const Wrapper = styled.div`
   position: relative;
   width: max-content;
 `
 
-
-
+// Wraps the icon for positioning
 const IconWrapper = styled.div`
   position: absolute;
   top: 0;
